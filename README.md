@@ -1,2 +1,6 @@
-# vedbhoot.github.io
-Personal website for Ved Bhoot (me).
+Howdy, I'm Ved.
+
+
+I'm a PhD Candidate at University of California, Irvine, in the department of Earth System Science. 
+My reserach focuses the nexus of vegetation cover change, fire risk, and carbon for California's natural lands. 
+
