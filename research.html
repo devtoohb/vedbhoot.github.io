@@ -257,6 +257,60 @@
             margin-bottom: 0.3rem;
         }
 
+        /* Figure styling for integrated text/image layout */
+        .project-subtitle {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .project-question {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .figure {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .figure img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .figure-caption {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .figure-row {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .figure-row .figure {
+            flex: 1;
+            margin: 0;
+        }
+
+        .project-content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .layout {
@@ -300,6 +354,11 @@
                 border-left: none;
                 border-bottom-color: #2c3e50;
             }
+
+            .figure-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -337,22 +396,44 @@
                 <h2>Research</h2>
 
                 <div class="project">
-                    <h3 class="project-title">Post-Fire Forest Recovery in California</h3>
-                    <img src="images/KNP_BurnArea_Succession.jpg" alt="Example:KNP Complex Fire burn area succession" class="project-image">
-                    <p class="project-description">
-                        Declines in conifer forest recovery and forest loss from four decades of wildfire in California
+                    <h3 class="project-title">Declines in conifer forest recovery and forest loss from four decades of wildfire in California</h3>
+                    <!-- <p class="project-subtitle"></p> -->
 
-                        Which forest areas are recovering and which are not?
-                        This question can be responded to in a number of approaches ranging from monitoring specific forests in the field to process based models or remote sensing.
-                        Few if any studies have attempted to research this question at a large scale using remote sensing. 
-                        In this project I and my co-authors used Landsat data to track the recovery of two different forest types in California.
-                        We used a machine learning approach, a base map of land cover (Existing Vegetation Type) types from LANDFIRE, and nearly four decades of Landsat seasonal spectra to produce land cover maps and track vegetation cover change.
-                        From these maps we tracked the recovery of forest extent for conifer and hardwoods forests.
-                        We found that 15 years after fire, proportionally for areas burned, conifer forest are recovering extent slower than hardwood forests.
-                        We also found that there is a net loss of these two forest types, which much of their cover being replaced by shrubs.
-                        Although the transition to shrubs is a natural process in ecological post-fire succession, the decreasing recovery rate for conifer forests may indicate a cause for concern for the forest type.
-                        Given increasingly severe fires, particularly those with large homogeneous patches of high severity, and shifting climate conditions that some of these forests are less adapted to, conifer forests in particular may be at risk of continued decline.
-                    </p>
+                    <div class="project-content">
+                        <p class="project-question">Which forest types in California are recovering and which are not?</p>
+
+                        <p>
+                            In this project my co-authors and I used Landsat seasonal surface reflectance time series and machine learning to develop maps of vegetation type and track how the recovery of two different forest types in California has changed from 1985-2022.
+                            We used a machine learning approach, a base map of vegetation type (Existing Vegetation Type) from LANDFIRE, and nearly four decades of Landsat seasonal spectra to produce land cover maps and track vegetation cover change.
+                        </p>
+
+                        <div class="figure">
+                            <img src="images/Map_Panel_Plots_labels_2_Revised.jpg" alt="Map showing forest recovery patterns across California burn areas">
+                            <p class="figure-caption">Spatial patterns of forest recovery across California burn areas. 
+                                <br> >0 is cover gain from 1985 to 2022, <0 is loss, =0 is no change </br>
+                            </p>
+                        </div>
+
+                        <p>
+                            From these maps we tracked the recovery of forest extent for conifer and hardwood forests.
+                            We found that 15 years after fire, proportionally for areas burned, conifer forests are recovering extent slower than hardwood forests.
+                            We also found that there is a net loss of these two forest types, with much of their cover being replaced by shrubs.
+                        </p>
+
+                        <div class="figure">
+                            <img src="images/Recovery_CrossSection_labels_revised.jpg" alt="Cross-section analysis of forest recovery over time">
+                            <p class="figure-caption">Top row (a-c) are recovery curves for pixels burned the respective burn year bins.
+                                <br>Bottom (d) is a recovery cross section for 15 years since fire. Interpreted as "For burned areas 15 years after fire, vegetation type X is Y% of that to unburned conditions.  "</br>
+                                <br>Values greater than 100 indicate burned areas that have more of the given vegetation cover than unbured conditions.</br>
+                            </p>
+                        </div>
+
+                        <p>
+                            Although the transition to shrubs is a natural process in ecological post-fire succession, the decreasing recovery rate for conifer forests suggests a cause for concern for the forest type.
+                            Given continuation of particularly severe wildfire, particularly those with large homogeneous patches of high severity, and climate conditions less suitable for reestablishment, conifer forests in particular may be at risk of continued decline.
+                        </p>
+                    </div>
+
                     <div class="project-keywords">
                         <span>Wildfire</span>
                         <span>Forest Recovery</span>
@@ -363,11 +444,11 @@
                 <div class="project">
                     <h3 class="project-title">Changing Fuels and Fire Risk</h3>
                     <p class="project-description">
-                        [Add your description here about how changing fuels influence fire risk across the state, and how fire risk returns after fire events.]
+                        
                     </p>
                     <div class="project-keywords">
                         <span>Fire Risk</span>
-                        <span>Fuel Dynamics</span>
+                        <span>Fire-Fuel Feedbacks</span>
                         <span>Vegetation</span>
                     </div>
                 </div>
@@ -375,7 +456,7 @@
                 <div class="project">
                     <h3 class="project-title">Aboveground Carbon Stock Changes</h3>
                     <p class="project-description">
-                        [Add your description here about tracking aboveground live carbon stocks over the past 40 years in California.]
+                        Current research! More to come soon... 🌲🌳🛰️
                     </p>
                     <div class="project-keywords">
                         <span>Carbon</span>
