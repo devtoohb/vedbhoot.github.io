@@ -1,11 +1,390 @@
-<section id="research">
-            <h2>Research</h2>
-            <p>
-            </p>
-            <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; color: #34495e;">Projects</h3>
-            <ul>
-                <li>Are Californian forests recovering slower after fire?</li>
-                <li>How are changing fuels in the state influencing fire risk? How does fire risk return after fire?</li>
-                <li>How have aboveground live carbon stocks changed in the past 40 years?</li>
-            </ul>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Ved N. Bhoot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #f8f8f8;
+            background-image:
+                linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            width: 300px;
+            background-color: #fff;
+            padding: 2.5rem 2rem;
+            border-right: 1px solid #ddd;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 1.5rem;
+            border: 3px solid #2c3e50;
+        }
+
+        .sidebar h1 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .sidebar h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .sidebar h1 a:hover {
+            color: #3498db;
+        }
+
+        .sidebar .title {
+            font-size: 0.95rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 0.3rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .sidebar .subtitle {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .links a {
+            display: block;
+            padding: 0.6rem 0;
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            transition: color 0.2s;
+        }
+
+        .links a:hover {
+            color: #3498db;
+        }
+
+        .links a::before {
+            content: "→ ";
+            color: #3498db;
+            margin-right: 0.5rem;
+        }
+
+        .email {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: #666;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Right Navigation */
+        .nav-tabs {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            padding: 1rem 0.5rem;
+            border-left: 1px solid #ddd;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            z-index: 100;
+        }
+
+        .nav-tabs a {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+            margin: 0.2rem 0;
+        }
+
+        .nav-tabs a:hover {
+            color: #3498db;
+            border-left-color: #3498db;
+            background-color: #f8f8f8;
+        }
+
+        .nav-tabs a.active {
+            border-left-color: #2c3e50;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 300px;
+            padding: 3rem 4rem 3rem 3rem;
+            max-width: 900px;
+            flex: 1;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        section h3 {
+            font-size: 1.3rem;
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section h3:first-of-type {
+            margin-top: 0;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        section li {
+            margin-bottom: 0.7rem;
+            color: #333;
+        }
+
+        /* Research Project Cards */
+        .project {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .project-image {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .project-description {
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .project-keywords {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .project-keywords span {
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+
+            .nav-tabs {
+                position: static;
+                transform: none;
+                border-radius: 0;
+                border: none;
+                border-top: 1px solid #ddd;
+                padding: 1rem;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-tabs a {
+                display: inline-block;
+                margin: 0.3rem;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+
+            .nav-tabs a:hover,
+            .nav-tabs a.active {
+                border-left: none;
+                border-bottom-color: #2c3e50;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <img src="images/headshot_vnb.jpg" alt="Ved N. Bhoot" class="profile-img">
+            <h1><a href="index.html">Ved N. Bhoot</a></h1>
+            <div class="title">PhD Candidate</div>
+            <div class="subtitle">UC Irvine | Earth System Science</div>
+
+            <div class="links">
+                <a href="https://github.com/devtoohb" target="_blank">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=LcasWwgAAAAJ&hl=en" target="_blank">Google Scholar</a>
+                <a href="https://orcid.org/0000-0002-2720-0753" target="_blank">ORCID</a>
+            </div>
+
+            <div class="email">
+                vbhoot -at- uci -dot- edu
+            </div>
+        </aside>
+
+        <!-- Right Navigation -->
+        <nav class="nav-tabs">
+            <a href="index.html#about">About</a>
+            <a href="research.html" class="active">Research</a>
+            <a href="index.html#publications">Publications</a>
+            <a href="index.html#cv">CV</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section>
+                <h2>Research</h2>
+
+                <div class="project">
+                    <h3 class="project-title">Post-Fire Forest Recovery in California</h3>
+                    <img src="images/KNP_BurnArea_Succession.jpg" alt="Example:KNP Complex Fire burn area succession" class="project-image">
+                    <p class="project-description">
+                        Declines in conifer forest recovery and forest loss from four decades of wildfire in California
+
+                        Which forest areas are recovering and which are not?
+                        This question can be responded to in a number of approaches ranging from monitoring specific forests in the field to process based models or remote sensing.
+                        Few if any studies have attempted to research this question at a large scale using remote sensing. 
+                        In this project I and my co-authors used Landsat data to track the recovery of two different forest types in California.
+                        We used a machine learning approach, a base map of land cover (Existing Vegetation Type) types from LANDFIRE, and nearly four decades of Landsat seasonal spectra to produce land cover maps and track vegetation cover change.
+                        From these maps we tracked the recovery of forest extent for conifer and hardwoods forests.
+                        We found that 15 years after fire, proportionally for areas burned, conifer forest are recovering extent slower than hardwood forests.
+                        We also found that there is a net loss of these two forest types, which much of their cover being replaced by shrubs.
+                        Although the transition to shrubs is a natural process in ecological post-fire succession, the decreasing recovery rate for conifer forests may indicate a cause for concern for the forest type.
+                        Given increasingly severe fires, particularly those with large homogeneous patches of high severity, and shifting climate conditions that some of these forests are less adapted to, conifer forests in particular may be at risk of continued decline.
+                    </p>
+                    <div class="project-keywords">
+                        <span>Wildfire</span>
+                        <span>Forest Recovery</span>
+                        <span>Remote Sensing</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3 class="project-title">Changing Fuels and Fire Risk</h3>
+                    <p class="project-description">
+                        [Add your description here about how changing fuels influence fire risk across the state, and how fire risk returns after fire events.]
+                    </p>
+                    <div class="project-keywords">
+                        <span>Fire Risk</span>
+                        <span>Fuel Dynamics</span>
+                        <span>Vegetation</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3 class="project-title">Aboveground Carbon Stock Changes</h3>
+                    <p class="project-description">
+                        [Add your description here about tracking aboveground live carbon stocks over the past 40 years in California.]
+                    </p>
+                    <div class="project-keywords">
+                        <span>Carbon</span>
+                        <span>Landsat</span>
+                        <span>Time Series</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
