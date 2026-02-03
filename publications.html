@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ved N. Bhoot - PhD Candidate</title>
+    <title>Publications - Ved N. Bhoot</title>
     <style>
         * {
             margin: 0;
@@ -15,11 +15,7 @@
             font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.6;
             color: #1a1a1a;
-            
-            
-            background-image:
-                linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0)),
-                url('images/KingsCanyon_Scenic.jpg');
+            background-image: url('images/Whitney_Mtn_Cloudy.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -34,7 +30,6 @@
         .sidebar {
             width: 300px;
             background-color: rgba(255, 255, 255, 0.9);
-            
             padding: 2.5rem 2rem;
             border-right: 1px solid #ddd;
             position: fixed;
@@ -59,6 +54,15 @@
             color: #2c3e50;
         }
 
+        .sidebar h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .sidebar h1 a:hover {
+            color: #3498db;
+        }
+
         .sidebar .title {
             font-size: 0.95rem;
             color: #000;
@@ -72,6 +76,16 @@
             color: #000;
             text-align: center;
             margin-bottom: 2rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .email {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+            font-size: 1.25rem;
+            color: #000;
+            text-align: center;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
@@ -101,16 +115,6 @@
             margin-right: 0.5rem;
         }
 
-        .email {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #eee;
-            font-size: 1.25rem;
-            color: #000;
-            text-align: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
         /* Right Navigation */
         .nav-tabs {
             background-color: rgba(255, 255, 255, 0.75);
@@ -118,7 +122,6 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            
             padding: 1rem 0.05rem;
             border-left: 1px solid #ddd;
             border-top: 1px solid #ddd;
@@ -142,7 +145,6 @@
         .nav-tabs a:hover {
             color: #3498db;
             border-left-color: #3498db;
-            background-color: #f8f8f8;
         }
 
         .nav-tabs a.active {
@@ -156,10 +158,6 @@
             padding: 3rem 4rem 3rem 3rem;
             max-width: 900px;
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 100vh;
         }
 
         section {
@@ -234,23 +232,6 @@
             text-decoration: underline;
         }
 
-        /* Hero Banner - Framed Gallery Style */
-        .hero-banner {
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-banner img {
-            max-width: 100%;
-            max-height: 400px;
-            height: auto;
-            width: auto;
-            display: block;
-            border: 3px solid #2c3e50;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
         /* Responsive */
         @media (max-width: 1024px) {
             .layout {
@@ -302,7 +283,7 @@
         <!-- Left Sidebar -->
         <aside class="sidebar">
             <img src="images/headshot_vnb.jpg" alt="Ved N. Bhoot" class="profile-img">
-            <h1>Ved N. Bhoot</h1>
+            <h1><a href="index.html">Ved N. Bhoot</a></h1>
             <div class="title">PhD Candidate</div>
             <div class="subtitle">UC Irvine | Earth System Science</div>
 
@@ -316,27 +297,48 @@
                 <a href="https://scholar.google.com/citations?user=LcasWwgAAAAJ&hl=en" target="_blank">Google Scholar</a>
                 <a href="https://orcid.org/0000-0002-2720-0753" target="_blank">ORCID</a>
             </div>
-            
-
-            
         </aside>
 
         <!-- Right Navigation -->
         <nav class="nav-tabs">
-            <a href="#about" class="active">About</a>
+            <a href="index.html#about">About</a>
             <a href="research.html">Research</a>
-            <a href="publications.html">Publications</a>
+            <a href="publications.html" class="active">Publications</a>
         </nav>
 
         <!-- Main Content -->
         <main class="main-content">
-            <section id="about">
-                <h2>About Me</h2>
-                <p>
-                    I'm a PhD Candidate at University of California, Irvine, in the department of Earth System Science.
-                    My research is focused on the nexus of <strong>vegetation cover change</strong>, <strong>fire risk</strong>, and <strong>carbon</strong> in Californian ecosystems.
-                    I'm particularly interested in how complex natural systems interact with each other; by application, the way I like to approach problems is through thinking about how we can translate inference to scale and subsequently gain inference from it.
-                </p>
+            <section>
+                <h2>Publications</h2>
+
+                <div class="publication">
+                    <div class="publication-title">Declines in conifer forest recovery and forest loss from four decades of wildfire in California</div>
+                    <div class="publication-authors"><strong>Bhoot, V.N.</strong>, Kim, J.E., Randerson, J.T., Goulden, M.L. 2026</div>
+                    <div class="publication-venue">JGR Biogeosciences [In Review]. <a href="https://essopenarchive.org/doi/full/10.22541/essoar.175130438.89588120" target="_blank">ESS Archive preprint</a></div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">Rising forest exposure and fire severity from climate warming amplify tree cover losses from wildfire in California</div>
+                    <div class="publication-authors">Wang, J.A., Goulden, M.L., Norlen, C.A., <strong>Bhoot, V.</strong>, Coffield, S., & Randerson, J.T. 2024</div>
+                    <div class="publication-venue"><a href="https://doi.org/10.1088/1748-9326/ad86cf" target="_blank">Environmental Research Letters</a></div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">A novel random forest approach to revealing interactions and controls on chlorophyll concentration and bacterial communities during coastal phytoplankton blooms</div>
+                    <div class="publication-authors">Cheng, Y., <strong>Bhoot, V.N.</strong>, Kumbier, K. et al. 2021</div>
+                    <div class="publication-venue"><a href="https://doi.org/10.1038/s41598-021-98110-9" target="_blank">Scientific Reports</a></div>
+                </div>
+
+                <h3>Submitted</h3>
+                <ul>
+                    <li>Norlen, C.A., <strong>Bhoot, V.N.</strong>, Randerson, J.T., Goulden, M.L. How is forest drought resilience changing? A mechanistic framework for predicting dieback risk. [Submitted to Global Change Biology]</li>
+                </ul>
+
+                <h3>In Preparation</h3>
+                <ul>
+                    <li><strong>Bhoot, V.N.</strong>, Kim, J.E., Randerson, J.T., Goulden, M.L. Fuel driven changes to wildfire risk and wildfire-vegetation feedbacks across California.</li>
+                    <li><strong>Bhoot, V.N.</strong>, Goulden, M.L. Aboveground live carbon change in California from 1985-2025</li>
+                </ul>
             </section>
         </main>
     </div>
